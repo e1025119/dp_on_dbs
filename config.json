@@ -3,9 +3,9 @@
     "dsn": {
       "host": "localhost",
       "port": 5432,
-      "database": "logicsem", 
-      "user": "logicsem", 
-      "password": "XXX",
+      "database": "pthier", 
+      "user": "pthier", 
+      "password": "pthier",
       "application_name": "dpdb"
     },
     "max_connections": 100
@@ -13,13 +13,13 @@
   "db_admin": {
       "host": "localhost",
       "port": 5432,
-      "database": "logicsem",
-      "user": "postgres",
-      "password": "XXX",
+      "database": "pthier",
+      "user": "pthier",
+      "password": "pthier",
       "application_name": "dpdb-admin"
   },
   "htd": {
-    "path": "../htd/bin/htd_main",
+    "path": "htd/cmake/bin/htd_main",
     "parameters": [
       "--child-limit","5"
     ]
