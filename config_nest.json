@@ -3,9 +3,9 @@
     "dsn": {
       "host": "localhost",
       "port": 5432,
-      "database": "logicsem",
-      "user": "logicsem",
-      "password": "XXX",
+      "database": "pthier",
+      "user": "pthier",
+      "password": "pthier",
       "application_name": "dpdb"
     },
     "max_connections": 100
@@ -13,13 +13,13 @@
   "db_admin": {
     "host": "localhost",
     "port": 5432,
-    "database": "logicsem",
-    "user": "postgres",
-    "password": "XXX",
+    "database": "pthier",
+    "user": "pthier",
+    "password": "pthier",
     "application_name": "dpdb-admin"
   },
   "htd": {
-    "path": "../htd/bin/htd_main",
+    "path": "./htd/cmake/bin/htd_main",
     "parameters": [
       "--child-limit",
       "5"
@@ -35,11 +35,11 @@
     },
     "pmcext": {
       "preprocessor": {
-        "path": "../pmc_linux",
+        "path": "./pmc_linux",
         "args": "-vivification -eliminateLit -litImplied -iterate=10 -equiv -orGate -affine"
       },
       "sat_solver": {
-        "path": "../picosat",
+        "path": "./picosat",
         "seed_arg": "-s"
       },
       "max_solver_threads": 12
@@ -50,11 +50,11 @@
     "threshold_abstract": 8,
     "max_recursion_depth": 1,
     "sat_solver": {
-      "path": "<PATH-TO-PICOSAT>/picosat-965",
+      "path": "./picosat",
       "seed_arg": "-s"
     },
     "sharpsat_solver": {
-      "path": "<PATH-TO-miniC2D>/miniC2D-1.0.0",
+      "path": "./miniC2D-1.0.0",
       "args": "-C -c",
       "output_parser": {
         "class": "RegExReader",
@@ -65,7 +65,7 @@
       }
     },
     "pmc_solver": {
-      "path": "<PATH-TO-PROJCLINGO>>/projClingo-wrapper-1.0",
+      "path": "./pmc_linux",
       "output_parser": {
         "class": "RegExReader",
         "args": {
@@ -75,7 +75,7 @@
       }
     },
     "preprocessor": {
-      "path": "<PATH-TO-PMC>/pmc-1.0",
+      "path": "./pmc_linux",
       "args": "-vivification -eliminateLit -litImplied -iterate=10"
     },
     "asp": {
