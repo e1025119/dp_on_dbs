@@ -43,6 +43,3 @@ with open(output_file, "r+") as f_out:
     f_out.seek(0)
     f_out.truncate()
     f_out.write("\n".join(out_all))
-
-
-

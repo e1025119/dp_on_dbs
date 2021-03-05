@@ -1,0 +1,28 @@
+# execute these steps here (from the dp_on_dbs folder):
+
+1) ./initdb_cluster.sh
+
+    - starts the postgresql database used in the sharpsat algorithm
+    - make sure the password/user/path to exec. is correct, depending on environment
+
+2) python convertCNF2Gr.py $INPUT_CNF
+
+    - convert the .cnf input file to a .gr file that can be used by htd and carmeli17 (after conversion)
+
+3) python ../project-cs-20/main.py -comp -g $INPUT_GR
+    
+    - calls htd
+    - calls input_converter.py -> convert .gr to .bliss for carmeli17
+    - calls carmeli17
+
+4) cp ../project-cs-20/tree_decompositions/$INPUT/best/$BEST_TD .
+
+    - for the sake of convenience/tidyness, copy the TD from main.py back here
+
+5) python dpdb.py -f $INPUT_CNF SharpSat
+
+    - the "old" version, takes a .cnf and calls htd to obtain a TD, then calculates #SAT
+
+6) python new_dpdb.py -cnf $INPUT_CNF -ptd $BEST_TD SharpSat
+
+    - the "new" version, takes a .cnf and a specific pre-calculated TD, then calculates #SAT
