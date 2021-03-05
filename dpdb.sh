@@ -1,3 +1,4 @@
+#! /bin/bash
 ./initdb_cluster.sh
 python convertCNF2Gr.py $1
 IFS='.'
